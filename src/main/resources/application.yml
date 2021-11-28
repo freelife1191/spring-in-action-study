@@ -21,12 +21,21 @@ spring:
       enabled: true
       ## /h2 로 접속 지정하지 않으면 /h2-console 로 접속
       path: /h2
-  jpa:
-    hibernate:
-      ddl-auto: create
-    properties:
-      hibernate:
-        format_sql: true
+  sql:
+    init:
+      # hsqldb, h2, oracle, mysql, postgresql, all 등 설정에 의해 특정 플랫폼을 사용할때만 수행
+      platform: h2
+      # never: 초기화 비활성화, always: 초기화 활성화, embedded: embedded 에서만 사용
+      mode: always
+#  jpa:
+#    defer-datasource-initialization: true
+
+#  jpa:
+#    hibernate:
+#      ddl-auto: create
+#    properties:
+#      hibernate:
+#        format_sql: true
 #        default_batch_fetch_size: 100
 #        generate_statistics: true
 #        order_inserts: true
@@ -34,4 +43,4 @@ spring:
 #        jdbc:
 #          batch_size: 100
 #          batch_versioned_data: true
-    show-sql: true
+#    show-sql: true

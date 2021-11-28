@@ -2,6 +2,9 @@ package com.tacos;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
 
+/**
+ * 식자재 정보 저장
+ */
 @Data
 @RequiredArgsConstructor
 public class Ingredient {
